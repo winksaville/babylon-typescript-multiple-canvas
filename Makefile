@@ -11,8 +11,8 @@ TSC_FLAGS += --experimentalDecorators
 TSC_FLAGS += --forceConsistentCasingInFileNames
 TSC_FLAGS += --strictNullChecks
 
-test.js: test.ts js/babylon.2.5.d.ts Makefile
-	tsc $(TSC_FLAGS) test.ts js/babylon.2.5.d.ts
+test.js: test.ts js/babylon.d.ts Makefile
+	tsc $(TSC_FLAGS) test.ts js/babylon.d.ts
 
 .PHONY: clean
 clean:
