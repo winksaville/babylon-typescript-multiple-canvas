@@ -9,9 +9,9 @@ class Cube {
     private _rotationX: number;
     private _rotationY: number;
 
-  constructor(canvas: string, options?: {rotationX?: number; rotationY?: number} ) {
-    this._rotationX = options && options.rotationX || 0.0;
-    this._rotationY = options && options.rotationY || 0.0;
+  constructor(canvas: string, options?: {rotationX?: number, rotationY?: number} ) {
+    this._rotationX = (options && options.rotationX) ? options.rotationX : 0.0;
+    this._rotationY = (options && options.rotationY) ? options.rotationY : 0.0;
     this._canvas = <HTMLCanvasElement>document.getElementById(canvas);
     this._engine = new BABYLON.Engine(this._canvas, true) ;
     this._scene = new BABYLON.Scene(this._engine);

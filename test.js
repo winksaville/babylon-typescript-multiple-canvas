@@ -3,8 +3,8 @@
 console.log("ww=" + window.innerWidth + " wh=" + window.innerHeight);
 var Cube = (function () {
     function Cube(canvas, options) {
-        this._rotationX = options && options.rotationX || 0.0;
-        this._rotationY = options && options.rotationY || 0.0;
+        this._rotationX = (options && options.rotationX) ? options.rotationX : 0.0;
+        this._rotationY = (options && options.rotationY) ? options.rotationY : 0.0;
         this._canvas = document.getElementById(canvas);
         this._engine = new BABYLON.Engine(this._canvas, true);
         this._scene = new BABYLON.Scene(this._engine);
