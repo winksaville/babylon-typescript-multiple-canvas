@@ -1,4 +1,4 @@
-#TSC_FLAGS += --noEmitOnError # Must be disabled because babylon.d.ts has 6 'any' type errors
+TSC_FLAGS += --noEmitOnError
 TSC_FLAGS += --noUnusedLocals
 TSC_FLAGS += --noUnusedParameters
 TSC_FLAGS += --noIMplicitAny
@@ -12,6 +12,7 @@ TSC_FLAGS += --forceConsistentCasingInFileNames
 TSC_FLAGS += --strictNullChecks
 
 test.js: test.ts js/babylon.d.ts Makefile
+	rm -f test.js test.d.ts # Remove so on errors we won't see old files
 	tsc $(TSC_FLAGS) test.ts js/babylon.d.ts
 
 .PHONY: clean
